@@ -1,0 +1,140 @@
+.navBar {
+  width: 100%;
+  height: 66px;
+  background-color: lightgrey; //rgba(255,255,255,0.35);
+}
+
+.navList {
+  list-style: none;
+  display: inline-block;
+  margin-top: 25px;
+  margin-left: auto;
+  li {
+    display: inline;
+    margin-left: 50px;
+    margin-right: 50px;
+    @media screen and (max-width: 480px) {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.navLeft {
+  float: left;
+  margin-left: 10%;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+}
+
+.navBrand {
+  float: right;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+}
+
+.navRight {
+  float: right;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  img {
+    margin-top: 12px;
+    position: relative;
+    left: -50%;
+    width: 110px;
+    height: 36px;
+  }
+}
+
+.mobileNavHamburger {
+  display: none;
+  @media screen and (max-width: 480px) {
+    float: left;
+    margin-top: 25px;
+    margin-left: 5px;
+    display: block;
+  }
+}
+
+.mobileNavBar {
+  display: none;
+  @media screen and (max-width: 480px) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: none;
+    z-index: 10;
+  }
+}
+
+.mobileNavList {
+  margin-top: 80px;
+  text-align: center;
+  li {
+    margin-top: 15px;
+  }
+}
+
+.mouseEntrance {
+  position: absolute;
+  background: transparent;
+  right: 0px;
+  top: 0px;
+  width: 100px;
+  height: 70px;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+}
+
+.mouseExit {
+  position: absolute;
+  background: transparent;
+  right: 100px;
+  top: 0px;
+  width: 20px;
+  height: 70px;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+}
+
+.cart {
+  position: absolute;
+  margin-top: 66px;
+  width: 200px;
+  height: 450px;
+  right: 0px;
+  top: 0px;
+  background-color: grey;
+  display: none;
+  @media screen and (max-width: 480px) {
+    margin-top: 0;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    display: none;
+    z-index: 9;
+  }
+}
+
+.cartItems {
+  list-style: none;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
