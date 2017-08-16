@@ -1,0 +1,75 @@
+//fonts
+//$opensans               : 'Open Sans', sans-serif !default;
+//$roboto                 : 'Roboto', sans-serif !default;
+$lato                   : 'Lato', sans-serif !default;
+
+// ============== Define colors ============
+
+//base colors  
+$primary-color          : #00cc9c !default;
+$secondary-color        : #3e3e3e !default; 
+$border-color           : #eeeeee !default;
+$danger-color           : #fd7061 !default;
+$success-color          : #579c3e !default;
+
+//text colors
+$default-font-color     : #3e3e3e !default;
+$sub-font-color         : #505050 !default;
+$title-font-color       : #3e3e3e !default;
+$sub-title-font-color   : #3e3e3e !default;
+$link-color             : #0275d8 !default;
+  
+//Fonts
+$font-family-base       : $lato !default; // options: $roboto | $openSans  
+$title-font             : $lato !default;
+$title-sub-font         : $lato !default;
+$paragraph              : $lato !default;
+$icon                   : 'mousIcon' !default;
+
+//background color
+$bg-color               : #fff !default; 
+$bg-dark                : #ececec !default; 
+
+
+//button colors
+$primary-button         : $primary-color !default;
+$secondary-button       : $secondary-color !default; 
+
+//radius
+$radius                 : 4px !default;
+$radius-large           : 5px !default;
+$radius-small           : 3px !default;
+
+//layout
+$grid-columns           : 12 !default;
+$grid-gutter            : 30px !default;
+$grid-md-gutter         : 20px !default;
+$grid-sm-gutter         : 10px !default;
+$grid-xs-gutter         : 6px !default;
+$header-height          : 66px !default;
+ 
+//Typebase
+$baseFontSize           : 14px !default;
+$baseLineHeight         : 1.428571428571429 !default;
+
+//modal properties
+$overlay-color          : #ffffff !default;
+$overlay-opacity        : .95 !default;
+
+//stacking
+$stack-xs               : 1;
+$stack-sm               : 9;
+$stack-md               : 10;
+$stack-lg               : 99;
+$stack-xl               : 999;
+
+//Container sizes
+
+//Tablet screen
+$layout-sm              : (720px + $grid-gutter) !default;
+
+//Medium screen 
+$layout-md              : (940px + $grid-gutter) !default;
+
+//Large screen 
+$layout-lg              : (1170px + $grid-gutter) !default;

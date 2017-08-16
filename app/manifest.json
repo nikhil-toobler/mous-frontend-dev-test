@@ -1,0 +1,46 @@
+{
+  "name": "Mous",
+  "icons": [
+    {
+      "src": "images/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "density": 0.75
+    },
+    {
+      "src": "images/apple-touch-icon-57-precomposed.png",
+      "sizes": "57x57",
+      "type": "image/png",
+      "density": 1.0
+    }, 
+    {
+      "src": "images/apple-touch-icon-72-precomposed.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "density": 1.5
+    },
+    {
+      "src": "images/apple-touch-icon-114-precomposed.png",
+      "sizes": "114x114",
+      "type": "image/png",
+      "density": 3.0
+    },
+    {
+      "src": "images/apple-touch-icon-144-precomposed.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "density": 4.0
+    }
+  ],
+  "screenshots": [{
+    "src": "images/launch-screen.png",
+    "sizes": "750x1334",
+    "type": "image/png"
+  }],
+  "display": "fullscreen",
+  "theme_color": "#18bcee",
+  "background_color": "#000",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}

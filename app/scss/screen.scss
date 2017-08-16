@@ -1,0 +1,52 @@
+//compass
+@import "compass/compass";
+
+//helpers
+@import "helpers/variables"; 
+@import "helpers/mixins"; 
+@import "helpers/functions"; 
+
+//base fonts including
+@import "fonts/fonts"; 
+
+//themes
+//@import "themes/theme01"; /*please uncomment the line, for theme changing.*/
+
+//base
+@import "base/media-query";    
+@import "base/reset"; 
+@import "base/typography";  
+
+//components
+@import "components/animations";
+@import "components/breadcrumb";
+@import "components/buttons";
+@import "components/dropdown";
+@import "components/labels";
+@import "components/pagination";
+@import "components/table";
+@import "components/social-widget";
+@import "components/modal";
+@import "components/input-types";
+@import "components/tooltips"; 
+@import "components/notification"; 
+@import "components/rating"; 
+@import "components/tab"; 
+@import "components/lists"; 
+@import "components/alert";   
+@import "components/for-touch-devices";  
+
+//vendors
+@import "vendors/owl";  
+
+//modules
+@import "modules/grid";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/forms"; 
+
+//Layout
+@import "layout";
+
+//page
+@import "pages/home"; 

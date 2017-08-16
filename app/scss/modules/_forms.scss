@@ -1,0 +1,89 @@
+.basic-form {
+    .form-group {
+        margin-bottom: 15px;
+        @include clearfloat();
+        position: relative;
+        .text-field {
+            display: block;
+            border: none;
+            border-bottom: solid 1px rgba($primary-color, .4);
+            background-color: transparent;
+            height: 50px;
+            padding: 10px 0;
+            font-size: 14px;
+            font-family: $font-family-base;
+            font-weight: 400;
+            @include border-radius(0);
+            @include placeholder($primary-color, .6);
+            color: #fff;
+            &:focus {
+                font-weight: 500;
+            }
+        }
+        textarea.text-field{
+            height: auto;
+            resize: none;
+            margin-top: 5px;
+            overflow: auto;
+        }
+        &.no-margin {
+            margin-bottom: 0;
+        }
+        &::after {
+            background: #ffffff none repeat scroll 0 0;
+            bottom: 0;
+            content: "";
+            height: 1px;
+            left: 50%;
+            position: absolute;
+            @include transition(all 0.3s linear);
+            width: 0;
+            @include opacity(0);
+        }
+        &.focus::after{
+            left: 0;
+            width: 100%;
+            @include opacity(1);
+        }
+        &.last{
+            margin-bottom: 60px;
+        }
+        
+    }
+    .custom-select{
+        .active-list::before{
+            background: #ffffff none repeat scroll 0 0;
+            bottom: 0;
+            content: "";
+            height: 1px;
+            left: 50%;
+            position: absolute;
+            @include transition(all 0.3s linear);
+            width: 0;
+            @include opacity(0);
+        }
+        &.select-open{
+            .active-list::before{
+                left: 0;
+                width: 100%;
+                @include opacity(1);
+            }
+        }
+    } 
+    .required {
+        color: $danger-color;
+    }
+    .submit-btn{
+        border-width: 2px;
+        padding: 15px 35px 11px;
+        font-weight: 500;
+        font-size: 14px;
+        margin-top: 40px;
+        i{
+            margin-left: 10px;
+            font-size: 18px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+} 

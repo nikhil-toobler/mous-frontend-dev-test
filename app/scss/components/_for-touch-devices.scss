@@ -1,0 +1,26 @@
+///////////////////////////////////  
+        //If touch devices//
+///////////////////////////////////
+
+.touch-enabled{ 
+
+    ///////////////////////////////////
+    //Media Queries//
+    ///////////////////////////////////
+    
+    @media (min-width: $screen-sm-min) {   
+    }
+    
+    @media (min-width: $screen-md-min) {   
+    }
+    
+    //max media queries
+    
+
+    @media (max-width: $screen-sm-max) {  
+    } 
+    
+
+    @media (max-width: $screen-xs-max) {   
+    } 
+}

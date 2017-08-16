@@ -1,0 +1,188 @@
+//write header styles here 
+.main-header{
+    background-color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    &__menu-btn{
+        font-size: 24px;
+        float: left;
+    }
+    &__main-menu{
+        float: left;
+        margin-left: 30px;
+    }
+    &__profile,
+    &__search-btn{
+        font-size: 16px;
+        color: $default-font-color;
+        &:hover,
+        &:active{
+            color: $primary-color;
+        }
+    }
+    &__profile{
+        font-weight: bold;
+        margin-right: 20px;
+    }
+    &__text-link{
+        color: $default-font-color;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 0 20px;
+        &:hover,
+        &:active{
+            color: $primary-color;
+        }
+    }
+    &__main-logo{
+        display: block;
+        margin: 0 auto;
+        width: 125px;
+    } 
+    &__right{
+        float: right;
+    }
+}
+.header-dc{
+    float: left; 
+    &__dollar,
+    &__cart{
+        position: relative;
+        display: inline-block;
+        &--btn{
+            color: $default-font-color;
+            &:hover{
+                color: $primary-color;
+            }
+        }
+        &-hover{
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 16px;
+            background-color: #fff;
+            @include box-shadow(5px 5px 5px rgba(black,.2));
+            z-index: $stack-sm;
+            @include transition(all 0.2s linear);
+            @include transform(translateY(-10px));
+            @include visibility(hidden);
+        }
+    }
+    &__dollar{
+        &--btn{
+            margin-left: 10px;
+            font-size: 16px;
+            position: relative;
+            top: 1px;
+        }
+        &:hover &-hover{
+            @include visibility(visible);
+            @include transform(translateY(0));
+        }
+        &-hover{
+            width: 60px;
+            right: -25px;
+            &--link{ 
+                display: block;
+                padding: 10px;
+                @include opacity(1);
+                &:hover{
+                    @include opacity(0.8);
+                }
+            }
+        }
+    }
+    &__cart{
+        &--btn{
+            font-size: 18px;
+            margin-left: 15px;
+        }
+        &:hover &-hover{
+            @include visibility(visible);
+            @include transform(translateY(0));
+        }
+        &-hover{
+            width: 250px; 
+        }
+    }
+}
+.header-cart-hover{
+    &__item{ 
+    }
+    &--link{
+        display: block;
+        padding: 10px;
+        color: $default-font-color;
+        font-size: 14px;
+    }
+    &--empty{
+        display: block;
+        padding: 10px;
+        color: $sub-font-color;
+        font-size: 14px;
+    }
+}
+
+///////////////////////////////////  
+//Min width: Media Queries//
+///////////////////////////////////
+
+
+
+@media (min-width: $screen-phone) { 
+    
+} 
+@media (min-width: $screen-sm-min) { 
+ 
+    .main-header{ 
+        &__menu-btn{
+            margin-top: 12px;
+        }
+        &__main-menu{
+            margin-top: 12px;
+        }
+        &__right--main-menu{
+            margin-top: 0;
+            margin-left: 0;
+        }
+        &__right{
+            margin-top: 12px;
+        }
+    }
+    .header-dc{  
+        &__cart{
+            &--btn{
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+@media (min-width: $screen-md-min) { 
+}
+
+@media (min-width: $screen-lg-min) { 
+    
+}
+
+@media (min-width: 1700px) { 
+    
+}
+
+///////////////////////////////////  
+//Max width: Media Queries//
+///////////////////////////////////
+
+@media (max-width: $screen-xs-max) {  
+    .main-header{  
+        &__main-menu{
+            display: none;
+        }
+        &__main-logo{
+            width: 70px;
+        } 
+    }
+}
+
+@media (max-width: 359px) {  
+}

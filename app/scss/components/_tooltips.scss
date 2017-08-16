@@ -1,0 +1,160 @@
+.tooltip{
+    
+    $caret-color: rgba(#fff,1);
+    $caret-size : 8px;
+    
+    position: relative;
+    overflow: visible;
+    
+    .tooltip-content{
+        position: absolute;
+        background-color: $caret-color;
+        padding: 10px 12px;
+        color: #686868;
+        font-size: 14px; 
+        font-weight: normal !important;
+        font-style: normal;
+        @include opacity(0);
+        @include border-radius($radius-small);
+        visibility: hidden;
+        font-family: $font-family-base;
+        @include transition(all 0.3s linear);
+        z-index: 98;
+        line-height: 1;
+        border: solid 1px #dfe1e4;
+        @include box-shadow(0 2px 6px rgba($title-font-color, .13));
+        &::after{
+            position: absolute;
+            content: '';
+        }
+        &::before{
+            position: absolute;
+            content: '';
+        }
+        &.single-line{
+            white-space: nowrap; 
+            text-overflow: ellipsis; 
+        }
+    }
+    &.tooltip-right .tooltip-content{
+        left: 100%;
+        margin-left: $caret-size;
+        top: 50%;
+        @include transform(translateY(-50%));
+        &::after{
+            @include caret(left, $caret-size, $caret-color);
+            left: -$caret-size;
+            top: 9px;
+        }
+        &::before{
+            @include caret(left, $caret-size, $title-font-color);
+            left: -$caret-size;
+            top: 9px;
+        }
+    }
+    &.tooltip-left .tooltip-content{
+        right: 100%;
+        top: 50%;
+        @include transform(translateY(-50%));
+        margin-right: $caret-size;
+        &::after{ 
+            @include caret(right, $caret-size, $caret-color);
+            right: -$caret-size;
+            top: 9px;
+            
+        }
+        &::before{ 
+            @include caret(right, $caret-size, $title-font-color);
+            right: -$caret-size;
+            top: 9px;
+            
+        }
+    }
+    &.tooltip-bottom .tooltip-content{
+        left: 50%;
+        top: 100%;
+        @include transform(translateX(-50%));
+        margin-top: $caret-size;
+        &::after{
+            @include caret(top, $caret-size, $caret-color);
+            left: 50%;
+            @include transform(translateX(-50%));
+            top: -$caret-size;
+        }
+        &::before{
+            @include caret(top, $caret-size, $title-font-color);
+            left: 50%;
+            @include transform(translateX(-50%));
+            top: -$caret-size;
+            
+        }
+    }
+    &.tooltip-top .tooltip-content{
+        left: 50%;
+        bottom: 100%;
+        @include transform(translateX(-50%));
+        margin-bottom: $caret-size;
+        &::after{
+            @include caret(bottom, $caret-size, $caret-color);
+            left: 50%;
+            @include transform(translateX(-50%));
+            bottom: -$caret-size;
+        }
+        &::before{
+            @include caret(bottom, $caret-size, $title-font-color);
+            left: 50%;
+            @include transform(translateX(-50%));
+            bottom: -$caret-size;
+            
+        }
+    }
+    .info-tooltip{
+        display: inline-block;
+        font-size: 13px;
+        cursor: pointer;
+        margin-left: 3px;
+        font-weight: normal;
+    }
+    &:hover{
+        .tooltip-content{
+            @include opacity(1);
+            visibility: visible;
+        }
+    }
+    &.sm-width{
+        .tooltip-content{
+            width: 180px; 
+            line-height: 1.2;
+        }
+    }
+    &.single-line{
+        .tooltip-content{
+            white-space: nowrap;
+        }
+    }
+} 
+@media (max-width: $screen-xs-max) {
+    .tooltip.align-left-xs{
+        .tooltip-content{
+            @include transform(translateX(-20px));
+            &::after,
+            &::before{
+                left: 10px;
+                @include transform(translateX(0));
+            }
+        }
+    }
+    .tooltip.align-right-xs{
+        .tooltip-content{
+            @include transform(translateX(0px));
+            left: auto;
+            right: 0;
+            &::after,
+            &::before{
+                left: auto;
+                right: 5px;
+                @include transform(translateX(0));
+            }
+        }
+    }
+}

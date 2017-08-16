@@ -1,0 +1,18 @@
+//social web links
+.social-links{
+    display: inline-block;
+    a{
+        text-align: center;
+        display: inline-block;
+        width: 20px;
+        color: #fff;
+        font-size: 18px;
+        &:hover{
+            color: $primary-color;
+        }
+        + a{
+            margin-left: 10px;
+        }
+    } 
+}
+  

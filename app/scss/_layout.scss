@@ -1,0 +1,157 @@
+//write common styles here 
+.primary-color{
+    background-color: $primary-color;
+}
+
+//common-content-block
+.common-content-block{
+    padding: 30px 0;
+    text-align: center;
+    &__title{
+        font-size: 16px;
+        font-weight: 700;
+        color: black;
+        margin-bottom: 0;
+        position: relative;
+        max-width: 600px;
+        width: 100%;
+        display: inline-block;
+        &::after{
+            content: ''; 
+            margin-bottom: 10px;
+            margin-top: 5px;
+            background-color: #e0e0e0;
+            height: 1px;
+            display: block;
+        }
+    }
+    &__para{
+        color: $secondary-color;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 1.5;
+        max-width: 700px;
+    }
+}
+
+//media-grid-block
+.media-grid-block{
+    overflow: hidden;
+    text-align: center;
+    &__img{
+        width: 100%;
+        display: block;
+        &--auto{
+            width: auto;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    }
+    &__video{
+        width: 100%;
+    }
+    &__wrapper{
+        margin-left: 0;
+        margin-right: 0;
+        &--no-padding-xs{
+            margin-left: -($grid-gutter/2);
+            margin-right: -($grid-gutter/2);
+        }
+    }
+    &__col{
+        padding-left: 0; 
+        padding-right: 0;
+    }
+}
+.whats-in-the-box{
+    background-color: #f1f2f4;
+    padding-bottom: 30px;
+    &--shop-btn{
+        display: inline-block;
+        letter-spacing: 0.09em;
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+
+///////////////////////////////////  
+//Min width: Media Queries//
+///////////////////////////////////
+
+ 
+@media (min-width: $screen-sm-min) { 
+
+    //common-content-block
+    .common-content-block{
+        padding: 60px 0;  
+        &__title{
+            font-size: 18px; 
+            color: $title-font-color;
+        }
+        &__para{
+            font-size: 18px;
+        }
+    }
+    //media-grid-block
+    .media-grid-block{ 
+        &__wrapper{
+            margin-left: -1px;
+            margin-right: -1px;
+        }
+        &__col{
+            padding-left: 1px;
+            padding-right: 1px;
+            &--right-sm{
+                float: right;
+            }
+            &--mb{
+                margin-bottom: 2px;
+            }
+        }
+    }
+    .whats-in-the-box{
+        padding-bottom: 60px;
+        &--shop-btn{
+            font-size: 16px;
+            padding: 12px 30px;
+        }
+    }
+
+}
+
+@media (min-width: $screen-md-min) { 
+
+    //common-content-block
+    .common-content-block{
+        padding: 90px 0;  
+        &__title{
+            font-size: 20px; 
+        }
+        &__para{
+            font-size: 20px;
+        }
+    }
+}
+
+@media (min-width: $screen-lg-min) { 
+    
+}
+
+@media (min-width: 1700px) { 
+
+    //common-content-block
+    .common-content-block{
+        padding: 120px 0;  
+    }
+}
+ 
+///////////////////////////////////  
+//Max width: Media Queries//
+///////////////////////////////////
+
+@media (max-width: $screen-xs-max) {  
+}
+ 
+@media (max-width: 359px) {  
+}

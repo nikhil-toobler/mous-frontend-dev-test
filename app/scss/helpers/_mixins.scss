@@ -1,0 +1,151 @@
+//write something
+// use: @include clearfloat();
+@mixin clearfloat() {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//extend clearfix
+//use: @extend %clearfix;
+%clearfix {
+    zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// width and size property
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+//equal width and height property
+@mixin equal-size($equalSize) {
+    width: $equalSize;
+    height: $equalSize;
+}
+
+//placeholder color
+//use: @include placeholder($color, $opacity);
+@mixin placeholder($color, $opacity) {
+    &::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: $color;
+        opacity: $opacity;
+    }
+    &::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $color;
+        opacity: $opacity;
+    }
+    &:-ms-input-placeholder {
+        /* IE 10+ */
+        color: rgba($color,$opacity);
+        /*color: $color;
+        opacity: $opacity;*/
+    }
+    &::-ms-input-placeholder {
+        /* Firefox 18- */
+        color: $color;
+        opacity: $opacity;
+    }
+    &:-moz-placeholder {
+        /* Firefox 18- */
+        color: $color;
+        opacity: $opacity;
+    }
+}
+
+//caret use: @include caret(left, 5px, red);
+@mixin caret($point, $border-width, $color) {
+    $opposite: opposite-position($point);
+    border: $border-width solid transparent;
+    border-#{$opposite}: $border-width solid $color;
+    border-#{$point}: 0;
+    height: 0;
+    width: 0;
+}
+
+//no text select
+//@include no-select();
+@mixin no-select() {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+//custom scrollbar for webkits
+@mixin scrollbar($scroll-width, $scroll-radius, $track-color, $thumb-color) {
+    &::-webkit-scrollbar {
+        width: $scroll-width;
+    }
+    &::-webkit-scrollbar-track {
+        @include box-shadow(inset 0 0 6px $track-color);
+        @include border-radius($scroll-radius);
+    }
+    &::-webkit-scrollbar-thumb {
+        @include box-shadow(inset 0 0 6px $thumb-color);
+        @include border-radius($scroll-radius);
+    }
+}
+
+//truncate text
+//@include ellipsis();
+@mixin ellipsis() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//custom icons styles
+//@include customIcon();
+@mixin customIcon() {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: $icon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+//visibility
+//use: @include visibility(hidden|visible);
+@mixin visibility($visibility) {
+   @if $visibility == 'hidden' {
+       @include opacity(0);
+       visibility: hidden;
+   } @else {
+       @include opacity(1);
+       visibility: $visibility;
+   }
+}

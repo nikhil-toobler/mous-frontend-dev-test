@@ -1,0 +1,144 @@
+/* Grid */
+//common styles
+@mixin grid-cols($i: 1, $list: ".layout-xs-#{$i}, .layout-sm-#{$i}, .layout-md-#{$i}, .layout-lg-#{$i}") {
+    @for $i from (1 + 1) through $grid-columns {
+        $list: "#{$list}, .col-layout-#{$i}, .layout-sm-#{$i}, .layout-md-#{$i}, .layout-lg-#{$i}";
+    }
+    #{$list} {
+        position: relative;
+        min-height: 1px;
+        padding-left: ($grid-gutter / 2);
+        padding-right: ($grid-gutter / 2);
+    }
+}
+
+//active class styles
+@mixin grid-cols-float($class, $i: 1, $list: ".layout-#{$class}-#{$i}") {
+    @for $i from (1 + 1) through $grid-columns {
+        $list: "#{$list}, .layout-#{$class}-#{$i}";
+    }
+    #{$list} {
+        float: left;
+    }
+}
+
+//make column width
+@mixin grid-cols-width($class) {
+    @for $i from 1 through $grid-columns {
+        .layout-#{$class}-#{$i} {
+            width: 100% / 12 * $i;
+        }
+    }
+}
+
+// initiate styles
+.layout-container,
+.layout-fluid-container{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: ($grid-gutter / 2);
+    padding-right: ($grid-gutter / 2);
+    *zoom: 1;
+    &:before, 
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+.layout-wrapper {
+    margin-left: -$grid-gutter/2;
+    margin-right: -$grid-gutter/2;
+    *zoom: 1;
+    &:before, 
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+    &.no-gutter{
+        margin: 0;
+        [class^="layout-xs-"],
+        [class^="layout-sm-"],
+        [class^="layout-md-"],
+        [class^="layout-lg-"]{
+            padding: 0;
+        }
+    }
+}
+.medium-grid{
+    margin-left: -$grid-md-gutter/2;
+    margin-right: -$grid-md-gutter/2;
+    > [class^="layout-"]{
+       padding-left: $grid-md-gutter/2;
+        padding-right: $grid-md-gutter/2;
+    }
+}
+.small-grid{
+    margin-left: -$grid-sm-gutter/2;
+    margin-right: -$grid-sm-gutter/2;
+    > [class^="layout-"]{
+       padding-left: $grid-sm-gutter/2;
+        padding-right: $grid-sm-gutter/2;
+    }
+}
+.x-small-grid{
+    margin-left: -$grid-xs-gutter/2;
+    margin-right: -$grid-xs-gutter/2;
+    > [class^="layout-"]{
+       padding-left: $grid-xs-gutter/2;
+        padding-right: $grid-xs-gutter/2;
+    }
+}
+
+//from small to large
+@include grid-cols;
+// Extra Small grid
+@media (min-width: $screen-xs-min) {
+    @include grid-cols-float(xs);
+    @include grid-cols-width(xs);
+}
+
+// Small grid
+@media (min-width: $screen-sm-min) {
+    @include grid-cols-float(sm);
+    @include grid-cols-width(sm);
+    .layout-container {
+        width: $layout-sm;
+    }
+    .layout-fluid-container{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+// Medium grid
+@media (min-width: $screen-md-min) {
+    @include grid-cols-float(md);
+    @include grid-cols-width(md);
+    .layout-container {
+        width: $layout-md;
+    }
+    .layout-fluid-container{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+// Large grid
+@media (min-width: $screen-lg-min) {
+    @include grid-cols-float(lg);
+    @include grid-cols-width(lg);
+    .layout-container {
+        width: $layout-lg;
+    }
+    .layout-fluid-container{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}

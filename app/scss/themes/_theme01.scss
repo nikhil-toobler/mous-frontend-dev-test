@@ -1,0 +1,72 @@
+//fonts
+$opensans               : 'Open Sans', sans-serif;
+$roboto                 : 'Roboto', sans-serif;
+
+// ============== Define colors ============
+
+//base colors  
+$primary-color          : #1abc9c;
+$secondary-color        : #000000; 
+$border-color           : #eeeeee;
+$danger-color           : #fd7061;
+$success-color          : #579c3e;
+
+//text colors
+$default-font-color     : #000000;
+$sub-font-color         : #505050;
+$title-font-color       : #000000;
+$sub-title-font-color   : #000000;
+$link-color             : #0275d8;
+  
+//Fonts
+$font-family-base       : $roboto; // options: $roboto | $openSans  
+$title-font             : $opensans;
+$title-sub-font         : $opensans;
+$paragraph              : $roboto;
+$icon                   : 'cabotIcons';
+
+//background color
+$bg-color               : #fafafa; 
+$bg-dark                : #ececec; 
+
+
+//button colors
+$primary-button         : $primary-color;
+$secondary-button       : $secondary-color; 
+
+//radius
+$radius                 : 4px;
+$radius-large           : 5px;
+$radius-small           : 3px;
+
+//layout
+$grid-columns           : 12;
+$grid-gutter            : 30px;
+$grid-md-gutter         : 20px;
+$grid-sm-gutter         : 10px;
+$header-height          : 66px;
+ 
+//Typebase
+$baseFontSize           : 14px;
+$baseLineHeight         : 1.428571428571429;
+
+//modal properties
+$overlay-color          : #ffffff;
+$overlay-opacity        : .95;
+
+//stacking
+$stack-xs               : 1;
+$stack-sm               : 9;
+$stack-lg               : 10;
+$stack-xl               : 99;
+
+//Container sizes
+
+//Tablet screen
+$layout-sm              : (720px + $grid-gutter);
+
+//Medium screen 
+$layout-md              : (940px + $grid-gutter);
+
+//Large screen 
+$layout-lg              : (1170px + $grid-gutter);
