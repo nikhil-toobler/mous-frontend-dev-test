@@ -21,3 +21,5 @@ The shop page's functionality is implemented using the angular framework. We exp
 
 ### Bonus:
 In addition to submitting a pull request, you should try to host your webpage on an amazon S3 bucket and CloudFront CDN or free alternative. Please add the URL to this readme as part of the pull request.
+
+
