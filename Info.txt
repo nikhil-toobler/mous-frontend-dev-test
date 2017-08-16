@@ -1,0 +1,16 @@
+FOR INSTALL PACKAGES
+===============================
+A. path/ npm install
+
+
+FOR RUN APP 
+===================
+A. path/ gulp serve
+
+
+FOR BUILT APP 
+=====================
+A. path/ gulp build
+
+
+More info, Please checkout documentaion page here http://design-toobler.s3.amazonaws.com/mous/documentation.html
