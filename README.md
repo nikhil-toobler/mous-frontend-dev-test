@@ -1,5 +1,14 @@
 # Mous Front End Developer Test
 
+## Developer Notes
+Git URL: https://github.com/nikhil-toobler/mous-frontend-dev-test
+
+Staging URL: http://design-toobler.s3.amazonaws.com/mous/index.html
+
+Documentation URL http://design-toobler.s3.amazonaws.com/mous/documentation.html
+
+Technologies used: HTML5, CSS3, SASS, BEM methodology, DOTS-UI Framework, Gulp, jQuery, Custom font icons, Opengraph and Responsive layout.
+
 ## Prerequisites
 * A GitHub account
 * Access to test design on inVision
