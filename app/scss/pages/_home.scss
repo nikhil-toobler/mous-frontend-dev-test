@@ -2,8 +2,28 @@
 
 //main-banner
 .main-banner{
+    position: relative;
     &__video-iframe{
         display: none;
+        width: 100%;
+        border: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        z-index: $stack-sm;
+    }
+    &.video-playing{
+        .main-banner{
+            &__video-iframe{
+                display: block;
+            }
+            &--play,
+            &__quote,
+            &__content-wrap{
+                display: none;
+            }
+        }
     }
     &__img{
         width: 100%;
@@ -116,14 +136,22 @@
     }
     &__figure{
         margin: 0 -15px;
+        display: block;
     }
     &__img{
         display: inline-block;
         width: 100%;
-        vertical-align: top;
-        &--min-md{
-            display: none;
-        }
+        vertical-align: top; 
+    }
+}
+.whats-in-the-box{
+    background-color: #f1f2f4;
+    padding-bottom: 30px;
+    &--shop-btn{
+        display: inline-block;
+        letter-spacing: 0.09em;
+        width: 100%;
+        max-width: 320px;
     }
 }
 
@@ -157,9 +185,9 @@
     .huge-thanks{ 
         &__title{
             color: $title-font-color; 
-            font-size: 20px;
+            font-size: 22px;
             margin-bottom: 15px;
-            font-weight: 700;
+            font-weight: 600;
             &--brand{
                 color: inherit;
                 font-size: 26px;
@@ -173,6 +201,13 @@
         &__amount{ 
             font-size: 30px;  
         } 
+    }
+    .whats-in-the-box{
+        padding-bottom: 60px;
+        &--shop-btn{
+            font-size: 16px;
+            padding: 12px 30px;
+        }
     }
 }
 
@@ -228,15 +263,7 @@
         }
         &__figure{
             margin: 0;
-        }
-        &__img{ 
-            &--max-md{
-                display: none;
-            }
-            &--min-md{
-                display: block;
-            }
-        }
+        } 
     }
 }
 
@@ -244,7 +271,11 @@
     
     //main-banner
     .main-banner{   
-        height: calc(100vh - 70px);
+        height: calc(100vh - 70px); 
+        &--shop{
+            font-size: 24px;
+            padding: 10px 30px;
+        }
     }
     
     //huge-thanks
@@ -252,16 +283,24 @@
         &__box { 
             margin-top: 70px;
             line-height: 1.5;
-            font-size: 20px;
+            font-size: 22px;
         }
         &__amount{   
             margin-top: 150px; 
             font-size: 36px;
         } 
     }
+    
+    //whats-in-the-box
+    .whats-in-the-box{
+        &--shop-btn{
+            font-size: 24px;
+            padding: 10px 30px;
+        }
+    }
 }
 
-@media (min-width: 1700px) { 
+@media (min-width: 1600px) { 
     
     //huge-thanks
     .huge-thanks{  

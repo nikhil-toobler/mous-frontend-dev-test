@@ -49,6 +49,7 @@
     }
     &__video{
         width: 100%;
+        background-color: #eee;
     }
     &__wrapper{
         margin-left: 0;
@@ -63,17 +64,154 @@
         padding-right: 0;
     }
 }
-.whats-in-the-box{
-    background-color: #f1f2f4;
-    padding-bottom: 30px;
-    &--shop-btn{
-        display: inline-block;
-        letter-spacing: 0.09em;
-        width: 100%;
-        max-width: 320px;
+
+//scroll-top-btn
+.scroll-top-btn{
+    @include equal-size(40px);
+    @include border-radius(50%);
+    padding-bottom: 2px;
+    border: solid 2px #9b9b9b;
+    color: #9b9b9b;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: $stack-md;
+    @include visibility(hidden);
+    @include transform(translateY(-10px));
+    &:hover{
+        color: $primary-color;
+        border-color: $primary-color;
+    }
+    &.shown{
+        @include visibility(visible);
+        @include transform(translateY(0));
     }
 }
 
+//overlay
+.menu-overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: $stack-lg;
+    display: none;
+    cursor:url(../images/cursor.png), pointer;
+    background-color: rgba($overlay-color, .5);
+}
+//push-menu
+.push-menu{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background-color: #eeeeee;
+    z-index: $stack-lg;
+    width: 300px;
+    @include visibility(hidden);
+    left: -300px;
+    @include transition(all 0.2s linear);
+    &-open{
+        @include visibility(visible);
+        left: 0;
+    }
+    
+    $menu-border: #f9f9f9;
+    
+    &__top-block{ 
+        position: relative;
+    }
+    &__search{
+        margin-right: 60px;
+        position: relative;
+        padding-left: 25px;
+        margin-left: 15px;
+        border-right: solid 2px $menu-border;
+        &-icon{
+            position: absolute;
+            left: 0;
+            top: 50%;
+            font-size: 16px;
+            margin-top: -8px;
+        }
+        &-field{
+            height: 60px;
+            border: none;
+            padding: 0; 
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            background-color: transparent;
+            @include placeholder(#d2d2d2, 1);
+        }
+    }
+    &__back-btn{
+        float: right;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        padding-bottom: 2px;
+        color: $primary-color;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #eee;
+        &:hover{
+            background-color: $primary-color;
+            color: #fff;
+        }
+    }
+    
+    //menu
+    &__menu{
+        height: 80%;
+        height: calc( 100% - 60px);
+        overflow-y: auto;
+        &-list{ 
+            &--dropdown{
+                &-link{
+                    font-size: 16px;
+                    font-weight: 700;
+                    letter-spacing: 0.1em;
+                    cursor: pointer;
+                }
+            }
+        }
+        &-link{
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+            color: #131313;
+            border-top: solid 2px $menu-border;
+            background-color: #eeeeee;
+            &:hover{
+                color: #fff;
+                background-color: $primary-color;
+            }
+            &--news-letter{
+                font-size: 16px;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+            }
+        }
+    }
+    &__dropdown-menu{
+        display: none;
+    }
+    &__dropdown-link{
+        display: block;
+        padding: 8px 10px;
+        color: #9d9d9d;
+        font-size: 16px;
+        border-top: solid 2px $menu-border;
+        background-color: #eeeeee;
+        &:hover{
+            color: #fff;
+            background-color: $primary-color;
+        }
+    }
+}
 
 ///////////////////////////////////  
 //Min width: Media Queries//
@@ -110,13 +248,6 @@
             }
         }
     }
-    .whats-in-the-box{
-        padding-bottom: 60px;
-        &--shop-btn{
-            font-size: 16px;
-            padding: 12px 30px;
-        }
-    }
 
 }
 
@@ -126,16 +257,23 @@
     .common-content-block{
         padding: 90px 0;  
         &__title{
-            font-size: 20px; 
+            font-size: 22px; 
         }
         &__para{
-            font-size: 20px;
+            font-size: 22px;
         }
     }
 }
 
 @media (min-width: $screen-lg-min) { 
-    
+    //scroll-top-btn
+    .scroll-top-btn{
+        @include equal-size(50px); 
+        border-width: 2px;
+        font-size: 24px; 
+        right: 30px;
+        bottom: 60px; 
+    }
 }
 
 @media (min-width: 1700px) { 

@@ -182,6 +182,11 @@ pre {
     .visible-sm{
         display: block; 
     }
+    
+    //floating
+    .float-right-sm{
+        float: right !important;
+    }
 }
 @media (min-width: $screen-md-min) { 
     //hidden block

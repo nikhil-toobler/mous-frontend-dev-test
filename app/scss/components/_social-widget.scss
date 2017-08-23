@@ -3,10 +3,8 @@
     display: inline-block;
     a{
         text-align: center;
-        display: inline-block;
-        width: 20px;
-        color: #fff;
-        font-size: 18px;
+        display: inline-block; 
+        color: #000; 
         &:hover{
             color: $primary-color;
         }

@@ -59,18 +59,18 @@
     <!--Main header start here-->
     <header class="main-header">
         <div class="layout-fluid-container">
-            <button class="btn icon-menu main-header__menu-btn"></button>
-            <div class="main-header__main-menu">
+            <button id="pushMenuBtn" class="btn icon-menu main-header__menu-btn"></button>
+            <nav class="main-header__main-menu">
                 <a href="#" class="btn icon-user main-header__profile"></a>
                 <button class="btn icon-search main-header__search-btn"></button> 
                 <a href="#" class="main-header__text-link main-header__text-link--shop">SHOP</a> 
                 <a href="#" class="main-header__text-link">BRAND</a>
-            </div>            
+            </nav>            
             <aside class="main-header__right">
-                <div class="main-header__main-menu main-header__right--main-menu"> 
+                <nav class="main-header__main-menu main-header__right--main-menu"> 
                     <a href="#" class="main-header__text-link">BLOG</a>
                     <a href="#" class="main-header__text-link">AIROSHOCK</a>
-                </div>
+                </nav>
 
                 <div class="header-dc">
                     <div class="header-dc__dollar">
@@ -85,7 +85,7 @@
                         <ul class="header-dc__cart-hover header-cart-hover">
                             <li class="header-cart-hover__item">
                                 <span class="header-cart-hover--empty">Cart is empty</span>
-                                <!--<a href="#" class="header-cart-hover--link">Real Kevlar Carbon Fiber Case | iPhone 7</a>-->
+                                <!-- <a href="#" class="header-cart-hover--link">Real Kevlar Carbon Fiber Case | iPhone 7</a> -->
                             </li>
                         </ul>
                     </div>
@@ -97,17 +97,104 @@
     </header> 
     <!--Main header end here-->
     
+    <!--push menu overlay start-->
+    <span class="menu-overlay"></span>
+    <!--push menu overlay end-->
+    
+    <!--left push menu block start-->
+    <section class="push-menu">
+        <div class="push-menu__top-block">
+            <button id="closePushMenu" class="btn icon-left-arrow push-menu__back-btn"></button>
+            <form action="#" class="push-menu__search">
+                <button class="btn icon-search push-menu__search-icon"></button>
+                <input type="text" placeholder="Search" class="text-field push-menu__search-field">
+            </form>
+        </div>
+        <ul class="push-menu__menu">
+            <li class="push-menu__menu-list push-menu__menu-list--dropdown">
+                <span class="push-menu__menu-link push-menu__menu-list--dropdown-link push-menu-dd-link">CASES</span>
+                <ul class="push-menu__dropdown-menu push-menu-dd-ul">
+                    <li class="push-menu__dropdown-list">
+                        <a href="#" class="push-menu__dropdown-link">iPhone</a>
+                    </li>
+                    <li class="push-menu__dropdown-list">
+                        <a href="#" class="push-menu__dropdown-link">Samsung</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="push-menu__menu-list push-menu__menu-list--dropdown">
+                <span class="push-menu__menu-link push-menu__menu-list--dropdown-link push-menu-dd-link">ACCESSORIES</span>
+                <ul class="push-menu__dropdown-menu push-menu-dd-ul">
+                    <li class="push-menu__dropdown-list">
+                        <a href="#" class="push-menu__dropdown-link">Mobile Cases</a>
+                    </li>
+                    <li class="push-menu__dropdown-list">
+                        <a href="#" class="push-menu__dropdown-link">Wall Magnet</a>
+                    </li>
+                    <li class="push-menu__dropdown-list">
+                        <a href="#" class="push-menu__dropdown-link">Screen Protector</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="push-menu__menu-list push-menu__menu-list--dropdown">
+                <span class="push-menu__menu-link push-menu__menu-list--dropdown-link push-menu-dd-link">BRAND</span>
+                <ul class="push-menu__dropdown-menu push-menu-dd-ul"> 
+                    <li class="push-menu__dropdown-list">
+                        <a href="#" class="push-menu__dropdown-link">Brand 1</a>
+                    </li>
+                    <li class="push-menu__dropdown-list">
+                        <a href="#" class="push-menu__dropdown-link">Brand 2</a>
+                    </li>
+                    <li class="push-menu__dropdown-list">
+                        <a href="#" class="push-menu__dropdown-link">Brand 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="push-menu__menu-list">
+                <a href="#" class="push-menu__menu-link">My Basket</a>
+            </li>
+            <li class="push-menu__menu-list">
+                <a href="#" class="push-menu__menu-link">Search</a>
+            </li>
+            <li class="push-menu__menu-list">
+                <a href="#" class="push-menu__menu-link">My Profile</a>
+            </li>
+            <li class="push-menu__menu-list">
+                <a href="#" class="push-menu__menu-link">FAQs</a>
+            </li>
+            <li class="push-menu__menu-list">
+                <a href="#" class="push-menu__menu-link">Delivery &amp; Returns</a>
+            </li>
+            <li class="push-menu__menu-list">
+                <a href="#" class="push-menu__menu-link">Track Order</a>
+            </li>
+            <li class="push-menu__menu-list">
+                <a href="#" class="push-menu__menu-link">Warranty</a>
+            </li>
+            <li class="push-menu__menu-list">
+                <a href="#" class="push-menu__menu-link">Tutorials</a>
+            </li>
+            <li class="push-menu__menu-list">
+                <a href="#" class="push-menu__menu-link">Contact us</a>
+            </li>
+            <li class="push-menu__menu-list">
+                <a href="#" class="push-menu__menu-link push-menu__menu-link--news-letter">NEWSLETTER</a>
+            </li>
+        </ul>
+    </section>
+    <!--left push menu block end-->
+    
     <!--Main-banner start here-->
     <div class="main-banner">
         
         <!-- Youtube Iframe start here-->
-        <iframe class="main-banner__video-iframe" src="//www.youtube.com/embed/49tFe9rVglM?enablejsapi=1&amp;html5=1" allowfullscreen></iframe>
+        <!--<iframe id="bannerVideo" class="main-banner__video-iframe" src="//www.youtube.com/embed/49tFe9rVglM?enablejsapi=1&amp;html5=1" allowfullscreen></iframe>-->
         <!-- Youtube Iframe end here-->
         
         <!-- main-banner__content start here-->
         <div class="main-banner__content">
             <img class="main-banner__img" src="images/banner/Protective-iPhone-7-Plus-Carbon-Fibre-Case-with-Hammer.jpg" alt="Protective-iPhone-7-Plus-Carbon-Fibre-Case-with-Hammer">
-            <button class="btn icon-play main-banner--play"></button>
+            <button class="btn icon-play main-banner--play" id="bannerVideoBtn"></button>
             <div class="main-banner__quote">
                 <div class="layout-container"> 
                     <aside class="main-banner__quote-col">
@@ -145,11 +232,11 @@
                     <aside class="layout-md-3 huge-thanks__amount--max-md">
                         <div class="huge-thanks__amount">$2,240,931</div>
                     </aside>
-                    <aside class="layout-md-6 layout-lg-8">
-                        <figure class="huge-thanks__figure">
-                            <img src="images/indiegogo-small.jpg" alt="indiegogo-small" class="huge-thanks__img huge-thanks__img--max-md">
-                            <img src="images/indiegogo.jpg" alt="indiegogo" class="huge-thanks__img--min-md">
-                        </figure>
+                    <aside class="layout-md-6 layout-lg-8"> 
+                        <picture class="huge-thanks__figure">
+                          <source media="(min-width: 992px)" srcset="images/indiegogo.jpg"> 
+                          <img class="huge-thanks__img" src="images/indiegogo-small.jpg" alt="indiegogo-small">
+                        </picture>
                     </aside>
                     <aside class="layout-md-3 layout-lg-2 huge-thanks__amount--min-md">
                         <div class="huge-thanks__amount">$2,240,931</div>
@@ -251,7 +338,7 @@
         <section class="media-grid-block">
             <div class="layout-wrapper media-grid-block__wrapper">
                 <aside class="layout-sm-6 layout-sm-3 media-grid-block__col media-grid-block__col--right-sm">
-                    <video autoplay loop muted playsinline class="media-grid-block__video">
+                    <video poster="images/poster-FacePlant.jpg" autoplay loop muted playsinline class="media-grid-block__video">
                         <source src="videos/FacePlant-2.mp4" type="video/mp4">
                     </video>
                 </aside> 
@@ -282,7 +369,10 @@
         <section class="media-grid-block">
             <div class="layout-wrapper media-grid-block__wrapper"> 
                 <aside class="layout-sm-12">
-                    <img src="images/Slim-design-desktop.jpg" class="media-grid-block__img" alt="Slim-design-desktop">
+                    <picture>
+                      <source media="(min-width: 768px)" srcset="images/Slim-design-desktop.jpg">
+                      <img src="images/Slim-design-mobile.jpg" class="media-grid-block__img media-grid-block__img--auto" alt="Slim-design-mobile">
+                    </picture> 
                 </aside>
             </div>
         </section>
@@ -304,18 +394,35 @@
             </div>
         </section>
         <!--common-content-block end here-->
+        
         <!--media-grid-block start here-->
         <section class="media-grid-block">
             <div class="layout-container"> 
                 <div class="layout-wrapper media-grid-block__wrapper media-grid-block__wrapper--no-padding-xs"> 
-                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb"><img src="images/phone-cases/01.jpg" alt="01"></aside>
-                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb"><img src="images/phone-cases/02.jpg" alt="02"></aside>
-                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb"><img src="images/phone-cases/03.jpg" alt="03"></aside>
-                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb"><img src="images/phone-cases/04.jpg" alt="04"></aside>
-                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb"><img src="images/phone-cases/05.jpg" alt="05"></aside>
-                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb"><img src="images/phone-cases/06.jpg" alt="06"></aside>
-                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb"><img src="images/phone-cases/07.jpg" alt="07"></aside>
-                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb"><img src="images/phone-cases/08.jpg" alt="08"></aside>    
+                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb">
+                        <img src="images/phone-cases/01.jpg" alt="01">
+                    </aside>
+                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb">
+                        <img src="images/phone-cases/02.jpg" alt="02">
+                    </aside>
+                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb">
+                        <img src="images/phone-cases/03.jpg" alt="03">
+                    </aside>
+                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb">
+                        <img src="images/phone-cases/04.jpg" alt="04">
+                    </aside>
+                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb">
+                        <img src="images/phone-cases/05.jpg" alt="05">
+                    </aside>
+                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb">
+                        <img src="images/phone-cases/06.jpg" alt="06">
+                    </aside>
+                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb">
+                        <img src="images/phone-cases/07.jpg" alt="07">
+                    </aside>
+                    <aside class="layout-xs-6 layout-sm-3 media-grid-block__col media-grid-block__col--mb">
+                        <img src="images/phone-cases/08.jpg" alt="08">
+                    </aside>    
                 </div>
             </div>
         </section>
@@ -416,24 +523,82 @@
         <section class="media-grid-block whats-in-the-box">
             <div class="layout-container">
                 <div class="layout-wrapper media-grid-block__wrapper">
-                    <aside class="layout-sm-12 hidden-sm">
-                        <img src="images/What's-in-the-box_thumbnail.jpg" class="media-grid-block__img" alt="What's-in-the-box_thumbnail">
-                    </aside> 
-                    <aside class="layout-sm-12 hidden-xs visible-sm"> 
-                        <img src="images/What's-in-the-box.jpg" class="media-grid-block__img media-grid-block__img--auto" alt="What's-in-the-box"> 
-                    </aside>  
+                    <aside class="layout-sm-12">
+                        <picture>
+                          <source media="(min-width: 768px)" srcset="images/What's-in-the-box.jpg">
+                          <img src="images/What's-in-the-box_thumbnail.jpg" class="media-grid-block__img" alt="What's-in-the-box_thumbnail">
+                        </picture>
+                    </aside>   
                 </div> 
-                <button class="btn primary-btn whats-in-the-box--shop-btn">SHOP NOW</button>
+                <a href="#" class="btn primary-btn whats-in-the-box--shop-btn">SHOP NOW</a>
             </div>
         </section>
         <!--media-grid-block end here--> 
         
     </main>  
     <!-- main-content end here-->     
+      
+    <button class="btn icon-up-arrow scroll-top-btn"></button>  
        
     <!-- main-footer start here-->     
     <footer class="main-footer">
-        
+        <div class="layout-fluid-container">
+            <div class="main-footer__top">
+                <div class="layout-wrapper">
+                    <aside class="layout-xs-6 layout-sm-3">
+                        <ul class="main-footer__menu">
+                            <li class="main-footer__menu-list">
+                                <a href="#" class="main-footer__menu-link">FAQs</a>
+                            </li>
+                            <li class="main-footer__menu-list">
+                                <a href="#" class="main-footer__menu-link">Delivery &amp; Returns</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <aside class="layout-xs-6 layout-sm-3">
+                        <ul class="main-footer__menu">
+                            <li class="main-footer__menu-list">
+                                <a href="#" class="main-footer__menu-link">Warranty</a>
+                            </li>
+                            <li class="main-footer__menu-list">
+                                <a href="#" class="main-footer__menu-link">Tutorials</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <aside class="layout-xs-12 layout-sm-3">
+                        <ul class="main-footer__menu">
+                            <li class="main-footer__menu-list main-footer__menu-list--half-xs-left">
+                                <a href="#" class="main-footer__menu-link">Track Order</a>
+                            </li>
+                            <li class="main-footer__menu-list main-footer__menu-list--half-xs-right">
+                                <a href="#" class="main-footer__menu-link">Contact us</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <aside class="layout-xs-12 layout-sm-3">
+                        <h3 class="main-footer__title">NEWSLETTER <span class="hidden-xs main-footer__title--span">SIGNUP</span></h3>
+                        <div class="social-links main-footer__social">
+                            <a href="#" class="icon-instagram main-footer__social-link"></a>
+                            <a href="#" class="icon-facebook main-footer__social-link"></a>
+                            <a href="#" class="icon-twitter main-footer__social-link"></a>
+                            <a href="#" class="icon-youtube main-footer__social-link"></a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <div class="main-footer__bottom">
+                <div class="layout-wrapper">
+                    <aside class="layout-sm-4 float-right-sm">
+                        <div class="main-footer__logo">
+                            <img class="main-footer__logo-img" src="images/mous-main-logo.png" alt="Mous logo">
+                        </div>
+                    </aside>
+                    <aside class="layout-sm-8">
+                        <div class="main-footer__copy-right">©2017 Mous Products Ltd. Mous is a trademark of Mous Products Ltd. All rights reserved. Company No 09468982 registered in 6 North Close, Ipswich, IP42TL, UK (this is not an address for returns). Design Registrations pending.</div>
+                    </aside>
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- main-footer end here-->
     
@@ -444,7 +609,11 @@
     
     <script>
         $(document).ready(function(){ 
-            //write something
+            $('#bannerVideoBtn').click(function(e){
+                $('.main-banner').addClass('video-playing');
+                $("#bannerVideo")[0].src += "&autoplay=1";
+                e.preventDefault();
+            });
         });
     </script>
 

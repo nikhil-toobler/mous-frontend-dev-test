@@ -1,6 +1,77 @@
-jQuery(document).ready(function($) {    
-      
+jQuery(document).ready(function($) {  
     
+    ////////////////////////////////
+    //### sticky header ###//  
+    ////////////////////////////////  
+    
+    //sticky header
+    function stickyHeader(){
+        var windowHeight = $(window).height();
+        if($(window).scrollTop() > windowHeight ){
+            $('.main-header').addClass('sticky');
+        }else{
+            $('.main-header').removeClass('sticky');
+        }
+    }
+            
+    //init on loading
+    stickyHeader();    
+    //init on scrolling
+    $(window).on('scroll', stickyHeader); 
+    
+    
+    
+    ////////////////////////////////
+    //### push menu ###//  
+    ////////////////////////////////  
+    
+    //showing push menu
+    $('#pushMenuBtn').click(function(){
+        $('.push-menu').toggleClass('push-menu-open');
+        $('.menu-overlay').fadeToggle();
+    });
+    
+    //hidding push menu
+    $('#closePushMenu, .menu-overlay').click(function(){
+        $('#pushMenuBtn').trigger('click');
+    });
+    
+    //push menu drop down
+    $('.push-menu-dd-link').click(function(){
+        $(this).parent().toggleClass('currentMenu');
+        $('.push-menu-dd-ul').slideUp();
+        
+        if($(this).parent().hasClass('currentMenu')){
+            $(this).parent().find('.push-menu-dd-ul').slideToggle();
+        } 
+    });
+    
+    
+    
+    
+    
+    ////////////////////////////////
+    //### scroll to top button ###//  
+    ////////////////////////////////
+    
+    //scroll top btn
+    $('.scroll-top-btn').click(function(){
+        $('html,body').animate({scrollTop:0}, 400);
+    });
+    
+    function scrollTopBtn(){
+        var windowHeight = $(document).height()/2;
+        if($(window).scrollTop() > windowHeight ){
+            $('.scroll-top-btn').addClass('shown');
+        }else{
+            $('.scroll-top-btn').removeClass('shown');
+        }
+    }
+            
+    //init on loading
+    scrollTopBtn();    
+    //init on scrolling
+    $(window).on('scroll', scrollTopBtn); 
     
     //tabs
     var currentTab = $('.tab .tab-menu a:first').attr("href");
@@ -15,7 +86,7 @@ jQuery(document).ready(function($) {
         if(currentTab==$(this).attr("href"))
         {
             $(tab).show();
-        }
+        } 
         else
         {
              $(tab).fadeIn();

@@ -218,38 +218,37 @@
             <span class="info mb-30">[Only run this task after all of the tasks are completed in the development environment.]</span>
             
             <h2 class="uppercase title">Variables</h2>
-            <p class="mb-30">DOTS-UI framework powered with sass preprocessor, so all of the CSS values can quickly modify by variables. For example If you want to change your primary color into another color just change <span class="highlight">$primary-color : #14bdef !default;</span> color value from the scss/helpers/_variables.scss file into some another color value.</p>
+            <p class="mb-30">DOTS-UI framework powered with sass preprocessor, so all of the CSS values can quickly modify by variables. For example If you want to change your primary color into another color just change <span class="highlight">$primary-color : #00cc9c !default;</span> color value from the scss/helpers/_variables.scss file into some another color value.</p>
             <h6 class="h6">Used variables</h6>
             <pre class="css mb-30">
 <span class="comment">//fonts</span>
-$opensans               : 'Open Sans', sans-serif !default;
-$roboto                 : 'Roboto', sans-serif !default;
+$lato                   : 'Lato', sans-serif !default;
 
 <span class="comment">// ============== Define colors ============</span>
 
 <span class="comment">//base colors </span>  
-$primary-color          : #14bdef !default;
-$secondary-color        : #000000 !default; 
+$primary-color          : #00cc9c !default;
+$secondary-color        : #3e3e3e !default; 
 $border-color           : #eeeeee !default;
 $danger-color           : #fd7061 !default;
 $success-color          : #579c3e !default;
 
 <span class="comment">//text colors </span>
-$default-font-color     : #000000 !default;
+$default-font-color     : #3e3e3e !default;
 $sub-font-color         : #505050 !default;
-$title-font-color       : #000000 !default;
-$sub-title-font-color   : #000000 !default;
+$title-font-color       : #3e3e3e !default;
+$sub-title-font-color   : #3e3e3e !default;
 $link-color             : #0275d8 !default;
   
 <span class="comment">//Fonts </span>
-$font-family-base       : $roboto !default; <span class="comment">// options: $roboto | $openSans  </span> 
-$title-font             : $opensans !default;
-$title-sub-font         : $opensans !default;
-$paragraph              : $roboto !default;
-$icon                   : 'cabotIcons' !default;
+$font-family-base       : $lato !default; 
+$title-font             : $lato !default;
+$title-sub-font         : $lato !default;
+$paragraph              : $lato !default;
+$icon                   : 'mousIcon' !default;
 
 <span class="comment">//background color </span>
-$bg-color               : #fafafa !default; 
+$bg-color               : #fff !default; 
 $bg-dark                : #ececec !default; 
 
 
@@ -279,10 +278,11 @@ $overlay-color          : #ffffff !default;
 $overlay-opacity        : .95 !default;
 
 <span class="comment">//stacking </span>
-$stack-xs               : 1 !default;
-$stack-sm               : 9 !default;
-$stack-lg               : 10 !default;
-$stack-xl               : 99 !default;
+$stack-xs               : 1;
+$stack-sm               : 9;
+$stack-md               : 10;
+$stack-lg               : 99;
+$stack-xl               : 999;
 
 <span class="comment">//Container sizes </span>
 
@@ -617,7 +617,7 @@ $layout-lg              : (1170px + $grid-gutter) !default;</pre>
            
             <section class="popup-box-wrap demo-popup">
                 <div class="popup-box">
-                    <button class="btn icon-close-bold outside-close close-fn"></button>
+                    <button class="btn icon-close outside-close close-fn"></button>
                     <div class="popup-content">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore officia unde nam iste tenetur ab, aspernatur aperiam dolor repellat, nesciunt harum beatae explicabo tempora sapiente eligendi ut molestiae quaerat, dolorem.</p>
                     </div>

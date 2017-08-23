@@ -3,6 +3,11 @@
     background-color: #fff;
     padding: 15px 0;
     text-align: center;
+    left: 0;
+    position: relative;
+    width: 100%;
+    z-index: $stack-lg;
+    @include transition(all 0.3s linear);
     &__menu-btn{
         font-size: 24px;
         float: left;
@@ -27,7 +32,7 @@
     &__text-link{
         color: $default-font-color;
         font-size: 14px;
-        font-weight: 700;
+        font-weight: 600;
         margin: 0 20px;
         &:hover,
         &:active{
@@ -38,6 +43,9 @@
         display: block;
         margin: 0 auto;
         width: 125px;
+        &:hover{
+            @include opacity(0.8);
+        }
     } 
     &__right{
         float: right;
@@ -61,8 +69,8 @@
             right: 0;
             margin-top: 16px;
             background-color: #fff;
-            @include box-shadow(5px 5px 5px rgba(black,.2));
             z-index: $stack-sm;
+            @include box-shadow(5px 5px 5px rgba(black,.2));
             @include transition(all 0.2s linear);
             @include transform(translateY(-10px));
             @include visibility(hidden);
@@ -132,9 +140,13 @@
 @media (min-width: $screen-phone) { 
     
 } 
-@media (min-width: $screen-sm-min) { 
- 
+@media (min-width: $screen-sm-min) {
     .main-header{ 
+        &.sticky{
+            position: fixed; 
+            padding: 10px 0;
+            @include box-shadow(0 5px 5px rgba(black,.1));
+        }
         &__menu-btn{
             margin-top: 12px;
         }
@@ -161,8 +173,12 @@
 @media (min-width: $screen-md-min) { 
 }
 
-@media (min-width: $screen-lg-min) { 
-    
+@media (min-width: $screen-lg-min) {  
+    .main-header{ 
+        &__text-link{
+            font-size: 16px;
+        }
+    }
 }
 
 @media (min-width: 1700px) { 
